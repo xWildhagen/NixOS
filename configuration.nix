@@ -57,6 +57,9 @@
     pulse.enable = true;
   };
 
+  # Printing
+  services.printing.enable = true;
+
   # Windowing system.
   services.xserver = {
     enable = true;

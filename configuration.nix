@@ -20,7 +20,7 @@
 
   # Networking
   networking.networkmanager.enable = true;
-  networking.wireless.enable = true;
+  #networking.wireless.enable = true;
   networking.hostName = "nixos";
   
   # Regional, language and time zone

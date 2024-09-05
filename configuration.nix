@@ -67,7 +67,14 @@
 
   # KDE Plasma 6
   services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  services.desktopManager.plasma6 = {
+    enable = true;
+    defaultUserConfig = {
+      KDE = {
+        ColorScheme = "Breeze Dark"
+      };
+    };
+  };
 
   # Enable QEMU Guest agent
   services.qemuGuest.enable = true;

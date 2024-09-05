@@ -1,12 +1,12 @@
 # NixOS
 
-### Get new config
+### Get new config from GitHub
 ```
 nix-shell -p git --run "git clone https://github.com/xWildhagen/NixOS.git"
 sudo cp -r NixOS/* /etc/nixos
 ```
 
-### Pull changes
+### Pull changes from GitHub
 ```
 nix-shell -p git --run "git -C NixOS pull"
 sudo cp -r NixOS/* /etc/nixos

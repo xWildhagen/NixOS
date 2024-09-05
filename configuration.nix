@@ -69,11 +69,7 @@
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6 = {
     enable = true;
-    defaultUserConfig = {
-      KDE = {
-        ColorScheme = "Breeze Dark";
-      };
-    };
+    defaultWallpaper = "/etc/nixos/wallpaper.png";
   };
 
   # Enable QEMU Guest agent

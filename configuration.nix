@@ -71,7 +71,7 @@
     enable = true;
     defaultUserConfig = {
       KDE = {
-        ColorScheme = "Breeze Dark"
+        ColorScheme = "Breeze Dark";
       };
     };
   };

@@ -103,5 +103,6 @@
     unzip
     git
     spice-vdagent
+    terraform
   ];
 }

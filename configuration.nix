@@ -67,10 +67,7 @@
 
   # KDE Plasma 6
   services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6 = {
-    enable = true;
-    defaultWallpaper = "/etc/nixos/wallpaper.png";
-  };
+  services.desktopManager.plasma6 = true;
 
   # Enable QEMU Guest agent
   services.qemuGuest.enable = true;

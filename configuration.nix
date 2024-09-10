@@ -5,10 +5,9 @@
 #-------------------------------------------------------------------------------------------
 
 let
-systemVersion = "24.05";
-locale = "nb_NO.UTF-8";
-user = "wildhagen";
-
+  systemVersion = "24.05";
+  locale = "nb_NO.UTF-8";
+  user = "wildhagen";
 in
 {
   imports =

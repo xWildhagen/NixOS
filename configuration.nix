@@ -5,7 +5,7 @@
 #-------------------------------------------------------------------------------------------
 
 let
-  systemVersion = "24.05";
+  version = "24.05";
   locale = "nb_NO.UTF-8";
   user = "wildhagen";
 in
@@ -21,7 +21,7 @@ in
   #-------------------------------------------------------------------------------------------
 
   # System version
-  system.stateVersion = systemVersion;
+  system.stateVersion = version;
 
   # Auto update
   system.autoUpgrade = {
@@ -129,6 +129,7 @@ in
   #-------------------------------------------------------------------------------------------
 
   home-manager.users.${user} = { pkgs, ... }: {
+    home.stateVersion = version;
     home.packages = [ pkgs.htop ];
   };
 }

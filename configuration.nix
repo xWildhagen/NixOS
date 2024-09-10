@@ -68,9 +68,8 @@
   # KDE Plasma 6
   services.displayManager.sddm.enable = true;
   services.desktopManager = {
-    plasma6.enable = true;
-    
-  }
+    plasma6.enable = true; 
+  };
 
   # Enable QEMU Guest agent
   services.qemuGuest.enable = true;

@@ -72,9 +72,9 @@ in
   programs.hyprland.enable = true;
 
   # Windowing system.
-  #services.xserver = {
-  #  enable = true;
-  #};
+  services.xserver = {
+    enable = true;
+  };
 
   # Simple Desktop Display Manager
   #services.displayManager.sddm.enable = true;
@@ -95,7 +95,8 @@ in
     isNormalUser = true;
     description = "Wildhagen";
     home = "/home/wildhagen";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "video" "audio" "lp" "scanner" ];
+    initialPassword = "wildhagen";
     packages = with pkgs; [
       kdePackages.kate
     ];

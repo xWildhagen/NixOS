@@ -35,7 +35,7 @@ in
   # Regional, language and time zone
   time.timeZone = "Europe/Oslo";
 
-  i18n.defaultLocale = locale;
+  i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = locale;

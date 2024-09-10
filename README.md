@@ -9,7 +9,6 @@ sudo ln -s ~/NixOS/configuration.nix /etc/nixos/configuration.nix
 
 ### Pull changes from GitHub
 ```
-nix-shell -p git --run "git -C NixOS pull"
 git -C NixOS pull
 ```
 

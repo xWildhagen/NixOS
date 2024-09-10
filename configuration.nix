@@ -65,17 +65,14 @@
     enable = true;
   };
 
+  # Simple Desktop Display Manager
   services.displayManager.sddm.enable = true;
 
   # KDE Plasma 6
-  #services.desktopManager = {
-  #  plasma6.enable = true; 
-  #};
+  services.desktopManager = {
+    plasma6.enable = true; 
+  };
 
-  # Hyprland
-  programs.hyprland.enable = true;
-  programs.kitty.enable = true;
-  
   # Enable QEMU Guest agent
   services.qemuGuest.enable = true;
 

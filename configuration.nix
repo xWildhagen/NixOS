@@ -113,7 +113,7 @@
   environment.etc = {
     ".gitconfig".text = ''
       [user]
-        name = "Fredrik Wildhagen"
+        name = "Wildhagen"
         email = "github@wildhagen.net"
     '';
   };

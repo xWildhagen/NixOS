@@ -66,9 +66,15 @@
   };
 
   # KDE Plasma 6
-  services.displayManager.sddm.enable = true;
-  services.desktopManager = {
-    plasma6.enable = true; 
+  #services.displayManager.sddm.enable = true;
+  #services.desktopManager = {
+  #  plasma6.enable = true; 
+  #};
+
+  # Hyprland
+  programs = {
+    kitty.enable = true;
+    hyprland.enable = true;
   };
 
   # Enable QEMU Guest agent
@@ -106,15 +112,4 @@
     spice-vdagent
     terraform
   ];
-
-  # Git
-  programs.git.enable = true;
-
-  environment.etc = {
-    ".gitconfig".text = ''
-      [user]
-        name = "Wildhagen"
-        email = "github@wildhagen.net"
-    '';
-  };
 }

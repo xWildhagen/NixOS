@@ -77,7 +77,7 @@ in
   };
 
   # Simple Desktop Display Manager
-  #services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.enable = true;
 
   # KDE Plasma 6
   #services.desktopManager = {

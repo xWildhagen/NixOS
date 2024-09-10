@@ -102,6 +102,7 @@
 
   # System packages
   environment.systemPackages = with pkgs; [
+    kitty
     vim
     vscode
     wget

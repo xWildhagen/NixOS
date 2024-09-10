@@ -14,12 +14,13 @@ git -C NixOS pull
 
 ### Rebuild NixOS
 ```
-sudo nixos-rebuild switch --upgrade
+sudo nixos-rebuild switch
 ```
 
 ### Update NixOS
 ```
 sudo nix-channel --update
+sudo nixos-rebuild switch --upgrade
 ```
 
 ### List generations

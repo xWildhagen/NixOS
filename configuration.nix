@@ -109,6 +109,9 @@ in
   # Firefox
   programs.firefox.enable = true;
 
+  # Zsh
+  programs.zsh.enable = true;
+
   # System packages
   environment.systemPackages = with pkgs; [
     spice-vdagent

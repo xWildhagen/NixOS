@@ -22,6 +22,12 @@ in
   # System version
   system.stateVersion = systemVersion;
 
+  # Auto update
+  system.autoUpgrade = {
+    enable = true;
+    channel = "https://nixos.org/channels/nixos-24.05"
+  };
+
   # Bootloader
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";

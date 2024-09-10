@@ -17,6 +17,11 @@ git -C NixOS pull
 sudo nixos-rebuild switch --upgrade
 ```
 
+### Update NixOS
+```
+sudo nix-channel --update
+```
+
 ### Clean up old generations 
 ```
 sudo nix-env --list-generations

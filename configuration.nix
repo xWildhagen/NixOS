@@ -7,6 +7,7 @@
 let
 systemVersion = "24.05";
 locale = "nb_NO.UTF-8";
+user = "wildhagen";
 
 in
 {
@@ -89,12 +90,12 @@ in
   # USER
   #-------------------------------------------------------------------------------------------
   
-  users.users.wildhagen = {
+  users.users.${user} = {
     isNormalUser = true;
     description = "Wildhagen";
     home = "/home/wildhagen";
     extraGroups = [ "networkmanager" "wheel" "video" "audio" "lp" "scanner" ];
-    initialPassword = "wildhagen";
+    initialPassword = user;
     packages = with pkgs; [
       kdePackages.kate
     ];

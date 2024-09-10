@@ -22,7 +22,6 @@ in
   # Auto update
   system.autoUpgrade = {
     enable = true;
-    channel = ""
   };
 
   # Bootloader

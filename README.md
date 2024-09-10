@@ -22,3 +22,9 @@ sudo nixos-rebuild switch --upgrade
 sudo nix-env --list-generations
 sudo nix-collect-garbage --delete-old
 ```
+
+### Home Manager
+```
+nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+nix-channel --update
+```

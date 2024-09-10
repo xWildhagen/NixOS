@@ -73,6 +73,11 @@
     plasma6.enable = true; 
   };
 
+  environment.etc."xdg/plasma-org.kde.plasma.desktop-appletsrc".text = ''
+    [Containments][1][Wallpaper][org.kde.image][General]
+    Image=file:~/NixOS/aurora.jpg
+  '';
+
   # Enable QEMU Guest agent
   services.qemuGuest.enable = true;
 

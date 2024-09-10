@@ -114,11 +114,12 @@ in
   # System packages
   environment.systemPackages = with pkgs; [
     spice-vdagent
-    vim
+    firefox
     vscode
+    git
+    vim
     wget
     unzip
-    git
     terraform
   ];
 }

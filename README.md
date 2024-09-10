@@ -32,6 +32,12 @@ sudo nix-env --list-generations
 sudo nix-collect-garbage --delete-old
 ```
 
+### Unstable version of NixOS
+```
+sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos
+sudo nix-channel --update
+```
+
 ### Home Manager
 ```
 sudo nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager

@@ -5,7 +5,6 @@
 #-------------------------------------------------------------------------------------------
 
 let
-  version = "24.05";
   locale = "nb_NO.UTF-8";
   user = "wildhagen";
 in
@@ -20,12 +19,10 @@ in
   # SYSTEM
   #-------------------------------------------------------------------------------------------
 
-  # System version
-  system.stateVersion = version;
-
   # Auto update
   system.autoUpgrade = {
     enable = true;
+    channel = ""
   };
 
   # Bootloader
@@ -129,7 +126,6 @@ in
   #-------------------------------------------------------------------------------------------
 
   home-manager.users.${user} = { pkgs, ... }: {
-    home.stateVersion = version;
     home.packages = [ pkgs.htop ];
   };
 }

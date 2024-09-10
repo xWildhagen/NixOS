@@ -12,7 +12,9 @@ in
   imports =
     [
       /etc/nixos/hardware-configuration.nix
-      <home-manager/nixos>
+      (import "${builtins.fetchTarball {
+        url = "https://github.com/nix-community/home-manager/archive/master.tar.gz";
+      }}")
     ];
 
   #-------------------------------------------------------------------------------------------
@@ -92,6 +94,8 @@ in
   users.users.wildhagen = {
     isNormalUser = true;
     description = "Wildhagen";
+    home = "/home/wildhagen";
+    shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       kdePackages.kate
@@ -102,8 +106,14 @@ in
   # HOME MANAGER
   #-------------------------------------------------------------------------------------------
 
-  home-manager.users.wildhagen = { pkgs, ... }: {
-    home.stateVersion = systemVersion;
+  home-manager.users.wildhagen = { config, pkgs, ... }: {
+    programs.kde = {
+      enable = true;
+      plasma = {
+        enable = true;
+        version = "6";
+      };
+    };
   };
 
   #-------------------------------------------------------------------------------------------

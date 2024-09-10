@@ -69,18 +69,20 @@ in
   # Printing
   services.printing.enable = true;
 
+  programs.hyprland.enable = true;
+
   # Windowing system.
-  services.xserver = {
-    enable = true;
-  };
+  #services.xserver = {
+  #  enable = true;
+  #};
 
   # Simple Desktop Display Manager
-  services.displayManager.sddm.enable = true;
+  #services.displayManager.sddm.enable = true;
 
   # KDE Plasma 6
-  services.desktopManager = {
-    plasma6.enable = true; 
-  };
+  #services.desktopManager = {
+  #  plasma6.enable = true; 
+  #};
 
   # Enable QEMU Guest agent
   services.qemuGuest.enable = true;
@@ -93,7 +95,6 @@ in
     isNormalUser = true;
     description = "Wildhagen";
     home = "/home/wildhagen";
-    shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       kdePackages.kate
@@ -108,9 +109,6 @@ in
 
   # Firefox
   programs.firefox.enable = true;
-
-  # Zsh
-  programs.zsh.enable = true;
 
   # System packages
   environment.systemPackages = with pkgs; [

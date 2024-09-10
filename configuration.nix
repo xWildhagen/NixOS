@@ -88,12 +88,12 @@
   };
 
   #-------------------------------------------------------------------------------------------
-  # PACKAGES
+  # PACKAGES/PROGRAMS
   #-------------------------------------------------------------------------------------------
 
-  programs.firefox.enable = true;
-
   nixpkgs.config.allowUnfree = true;
+
+  programs.firefox.enable = true;
 
   environment.systemPackages = with pkgs; [
     vim
@@ -104,4 +104,10 @@
     spice-vdagent
     terraform
   ];
+
+  programs.git = {
+    enable = true;
+    userName = "Fredrik Wildhagen";
+    userEmail = "github@wildhagen.net";
+  };
 }

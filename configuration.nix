@@ -93,8 +93,10 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  # Firefox
   programs.firefox.enable = true;
 
+  # System packages
   environment.systemPackages = with pkgs; [
     vim
     vscode
@@ -105,9 +107,14 @@
     terraform
   ];
 
-  programs.git = {
-    enable = true;
-    userName = "Fredrik Wildhagen";
-    userEmail = "github@wildhagen.net";
+  # Git
+  programs.git.enable = true;
+
+  environment.etc = {
+    ".gitconfig".text = ''
+      [user]
+        name = "Fredrik Wildhagen"
+        email = "github@wildhagen.net"
+    '';
   };
 }

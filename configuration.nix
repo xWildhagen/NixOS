@@ -130,6 +130,5 @@ in
 
   home-manager.users.${user} = { pkgs, ... }: {
     home.stateVersion = version;
-    home.packages = [ pkgs.htop ];
   };
 }

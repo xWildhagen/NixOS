@@ -72,9 +72,8 @@
   #};
 
   # Hyprland
-  programs.kitty.enable = true;
-  services.hyprland.enable = true;
-
+  programs.hyprland.enable = true;
+  
   # Enable QEMU Guest agent
   services.qemuGuest.enable = true;
 
@@ -102,7 +101,6 @@
 
   # System packages
   environment.systemPackages = with pkgs; [
-    kitty
     vim
     vscode
     wget

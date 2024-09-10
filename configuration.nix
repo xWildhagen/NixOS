@@ -6,15 +6,13 @@
 
 let
 systemVersion = "24.05";
+locale = "nb_NO.UTF-8";
 
 in
 {
   imports =
     [
       /etc/nixos/hardware-configuration.nix
-      (import "${builtins.fetchTarball {
-        url = "https://github.com/nix-community/home-manager/archive/master.tar.gz";
-      }}")
     ];
 
   #-------------------------------------------------------------------------------------------
@@ -37,18 +35,18 @@ in
   # Regional, language and time zone
   time.timeZone = "Europe/Oslo";
 
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.defaultLocale = locale;
 
   i18n.extraLocaleSettings = {
-    LC_ADDRESS = "nb_NO.UTF-8";
-    LC_IDENTIFICATION = "nb_NO.UTF-8";
-    LC_MEASUREMENT = "nb_NO.UTF-8";
-    LC_MONETARY = "nb_NO.UTF-8";
-    LC_NAME = "nb_NO.UTF-8";
-    LC_NUMERIC = "nb_NO.UTF-8";
-    LC_PAPER = "nb_NO.UTF-8";
-    LC_TELEPHONE = "nb_NO.UTF-8";
-    LC_TIME = "nb_NO.UTF-8";
+    LC_ADDRESS = locale;
+    LC_IDENTIFICATION = locale;
+    LC_MEASUREMENT = locale;
+    LC_MONETARY = locale;
+    LC_NAME = locale;
+    LC_NUMERIC = locale;
+    LC_PAPER = locale;
+    LC_TELEPHONE = locale;
+    LC_TIME = locale;
   };
 
   services.xserver.xkb = {
@@ -100,20 +98,6 @@ in
     packages = with pkgs; [
       kdePackages.kate
     ];
-  };
-
-  #-------------------------------------------------------------------------------------------
-  # HOME MANAGER
-  #-------------------------------------------------------------------------------------------
-
-  home-manager.users.wildhagen = { config, pkgs, ... }: {
-    programs.kde = {
-      enable = true;
-      plasma = {
-        enable = true;
-        version = "6";
-      };
-    };
   };
 
   #-------------------------------------------------------------------------------------------

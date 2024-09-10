@@ -72,10 +72,8 @@
   #};
 
   # Hyprland
-  programs = {
-    kitty.enable = true;
-    hyprland.enable = true;
-  };
+  programs.kitty.enable = true;
+  services.hyprland.enable = true;
 
   # Enable QEMU Guest agent
   services.qemuGuest.enable = true;

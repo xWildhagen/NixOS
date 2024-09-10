@@ -108,9 +108,6 @@ in
 
   nixpkgs.config.allowUnfree = true;
 
-  # Firefox
-  programs.firefox.enable = true;
-
   # System packages
   environment.systemPackages = with pkgs; [
     spice-vdagent

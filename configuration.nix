@@ -69,8 +69,6 @@ in
   # Printing
   services.printing.enable = true;
 
-  programs.hyprland.enable = true;
-
   # Windowing system.
   services.xserver = {
     enable = true;
@@ -80,9 +78,9 @@ in
   services.displayManager.sddm.enable = true;
 
   # KDE Plasma 6
-  #services.desktopManager = {
-  #  plasma6.enable = true; 
-  #};
+  services.desktopManager = {
+    plasma6.enable = true; 
+  };
 
   # Enable QEMU Guest agent
   services.qemuGuest.enable = true;

@@ -132,9 +132,11 @@ in
   home-manager.users.${user} = { pkgs, ... }: {
     home.stateVersion = version;
 
-    kde.plasma6.wallpaper = {
-      enable = true;
-      location = "/home/wildhagen/NixOS/aurora.jpg"
-    };
+    xdg.configFile."plasma-org.kde.plasma.desktop-appletsrc".text = ''
+      [Containments][1][Wallpaper][org.kde.image][General]
+      Image=file:///home/${user}/NixOS/aurora.jpg
+    '';
+
+    home.file.".config/aurora.jpg".source = /home/${user}/NixOS/aurora.jpg;
   };
 }

@@ -86,6 +86,9 @@ in
   # KDE Plasma 6
   services.desktopManager = {
     plasma6.enable = true; 
+    plasma6.theme = {
+      name = "Breeze Dark";
+    };
   };
 
   # Enable QEMU Guest agent
@@ -131,12 +134,5 @@ in
 
   home-manager.users.${user} = { pkgs, ... }: {
     home.stateVersion = version;
-
-    xdg.configFile."plasma-org.kde.plasma.desktop-appletsrc".text = ''
-      [Containments][1][Wallpaper][org.kde.image][General]
-      Image=file:///home/${user}/NixOS/aurora.jpg
-    '';
-
-    home.file.".config/aurora.jpg".source = /home/${user}/NixOS/aurora.jpg;
   };
 }

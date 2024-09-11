@@ -13,7 +13,7 @@ in
   imports =
     [
       /etc/nixos/hardware-configuration.nix
-      "${pkgs.home-manager}/nixos"
+      <home-manager/nixos>
     ];
 
   #-------------------------------------------------------------------------------------------

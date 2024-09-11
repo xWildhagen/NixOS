@@ -75,15 +75,13 @@ in
   services.printing.enable = true;
 
   # Windowing system.
-  services.xserver.enable = false;
+  services.xserver.enable = true;
 
-  services.greetd = {
-    enable = true;
-    greeter = "agreet";
-    settings = {
-      default_session = "Hyprland";
-    };
-  };
+  # Simple Desktop Display Manager
+  services.displayManager.sddm.enable = true;
+
+  # KDE Plasma 6
+  services.desktopManager.plasma6.enable = true; 
 
   #-------------------------------------------------------------------------------------------
   # USER
@@ -96,7 +94,7 @@ in
     extraGroups = [ "networkmanager" "wheel" "video" "audio" "lp" "scanner" ];
     initialPassword = user;
     packages = with pkgs; [
-      hyprland
+      kdePackages.kate
     ];
   };
 
@@ -109,8 +107,6 @@ in
   # System packages
   environment.systemPackages = with pkgs; [
     spice-vdagent
-    hyprland
-    greetd
     firefox
     vscode
     git
@@ -127,23 +123,5 @@ in
 
   home-manager.users.${user} = { pkgs, ... }: {
     home.stateVersion = version;
-
-    home.packages = with pkgs; [
-      hyprland
-      waybar  # Recommended for status bars in Hyprland
-      wofi    # A Wayland launcher
-      grim    # Screenshot tool for Wayland
-      slurp   # Select area of screen
-    ];
-
-    # Hyprland config in Home Manager
-    home.file.".config/hypr/hyprland.conf".text = ''
-      # Example Hyprland configuration
-      monitor=HDMI-A-1,1920x1080@60,0x0,1.0
-      input {
-        kb_layout = "no"
-      }
-      # Other Hyprland specific settings...
-    '';
   };
 }

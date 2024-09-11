@@ -69,17 +69,19 @@ in
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    jack.enable = true;
   };
 
   # Printing
   services.printing.enable = true;
 
-  # Hyprland
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
+  # Windowing system.
+  services.xserver.enable = true;
+
+  # Simple Desktop Display Manager
+  services.displayManager.sddm.enable = true;
+
+  # KDE Plasma 6
+  services.desktopManager.plasma6.enable = true; 
 
   #-------------------------------------------------------------------------------------------
   # USER
@@ -91,6 +93,9 @@ in
     home = "/home/wildhagen";
     extraGroups = [ "networkmanager" "wheel" "video" "audio" "lp" "scanner" ];
     initialPassword = user;
+    packages = with pkgs; [
+      kdePackages.kate
+    ];
   };
 
   #-------------------------------------------------------------------------------------------
@@ -102,12 +107,6 @@ in
   # System packages
   environment.systemPackages = with pkgs; [
     spice-vdagent
-    waybar
-    dunst
-    libnotify
-    swww
-    kitty
-    rofi-wayland
     firefox
     vscode
     git

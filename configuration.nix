@@ -54,13 +54,6 @@ in
     LC_TIME = locale;
   };
 
-  # Keyboard
-  services.xserver.xkb = {
-    layout = "no";
-    variant = "winkeys";
-  };
-  console.keyMap = "no";
-
   # Sound
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -74,15 +67,10 @@ in
   # Printing
   services.printing.enable = true;
 
-  # Windowing system.
-  services.xserver.enable = false;
-
   services.greetd = {
     enable = true;
-    greeter = "agreet";
-    settings = {
-      default_session = "Hyprland";
-    };
+    greeterSession = "agreety";
+    defaultSession = "${pkgs.hyprland}/bin/Hyprland";  
   };
 
   #-------------------------------------------------------------------------------------------
@@ -110,7 +98,7 @@ in
   environment.systemPackages = with pkgs; [
     spice-vdagent
     hyprland
-    greetd
+    agreety
     firefox
     vscode
     git

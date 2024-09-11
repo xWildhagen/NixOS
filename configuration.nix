@@ -13,7 +13,7 @@ in
   imports =
     [
       /etc/nixos/hardware-configuration.nix
-      <home-manager/nixos>
+      "${pkgs.home-manager}/nixos"
     ];
 
   #-------------------------------------------------------------------------------------------
@@ -54,6 +54,13 @@ in
     LC_TIME = locale;
   };
 
+  # Keyboard
+  services.xserver.xkb = {
+    layout = "no";
+    variant = "winkeys";
+  };
+  console.keyMap = "no";
+
   # Sound
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -67,11 +74,14 @@ in
   # Printing
   services.printing.enable = true;
 
-  services.greetd = {
-    enable = true;
-    greeterSession = "agreety";
-    defaultSession = "${pkgs.hyprland}/bin/Hyprland";  
-  };
+  # Windowing system.
+  services.xserver.enable = true;
+
+  # Simple Desktop Display Manager
+  services.displayManager.sddm.enable = true;
+
+  # KDE Plasma 6
+  services.desktopManager.plasma6.enable = true; 
 
   #-------------------------------------------------------------------------------------------
   # USER
@@ -84,7 +94,7 @@ in
     extraGroups = [ "networkmanager" "wheel" "video" "audio" "lp" "scanner" ];
     initialPassword = user;
     packages = with pkgs; [
-      hyprland
+      kdePackages.kate
     ];
   };
 
@@ -97,8 +107,6 @@ in
   # System packages
   environment.systemPackages = with pkgs; [
     spice-vdagent
-    hyprland
-    agreety
     firefox
     vscode
     git
@@ -115,23 +123,5 @@ in
 
   home-manager.users.${user} = { pkgs, ... }: {
     home.stateVersion = version;
-
-    home.packages = with pkgs; [
-      hyprland
-      waybar  # Recommended for status bars in Hyprland
-      wofi    # A Wayland launcher
-      grim    # Screenshot tool for Wayland
-      slurp   # Select area of screen
-    ];
-
-    # Hyprland config in Home Manager
-    home.file.".config/hypr/hyprland.conf".text = ''
-      # Example Hyprland configuration
-      monitor=HDMI-A-1,1920x1080@60,0x0,1.0
-      input {
-        kb_layout = "no"
-      }
-      # Other Hyprland specific settings...
-    '';
   };
 }

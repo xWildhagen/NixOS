@@ -112,7 +112,6 @@ in
   environment.systemPackages = with pkgs; [
     spice-vdagent
     waybar
-    eww
     firefox
     vscode
     git

@@ -74,14 +74,22 @@ in
   # Printing
   services.printing.enable = true;
 
-  # Windowing system.
-  services.xserver.enable = true;
+  # Hyprland
+  programs.hyprland = {
+    enable = true;
+    nvidiaPatches = true;
+    xwayland.enable = true;
+  };
 
-  # Simple Desktop Display Manager
-  services.displayManager.sddm.enable = true;
+  environment.sessionVariables = {
+    WLR_NO_HARDWARE_CURSORS = "1";
+    NIXOS_OZONE_WL = "1";
+  };
 
-  # KDE Plasma 6
-  services.desktopManager.plasma6.enable = true; 
+  hardware = {
+    opengl.enable = true;
+    nvidia.modesetting.enable = true;
+  };
 
   #-------------------------------------------------------------------------------------------
   # USER
@@ -93,9 +101,6 @@ in
     home = "/home/wildhagen";
     extraGroups = [ "networkmanager" "wheel" "video" "audio" "lp" "scanner" ];
     initialPassword = user;
-    packages = with pkgs; [
-      kdePackages.kate
-    ];
   };
 
   #-------------------------------------------------------------------------------------------

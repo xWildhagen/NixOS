@@ -135,6 +135,6 @@ in
     kde.plasma6.wallpaper = {
       enable = true;
       location = "/home/wildhagen/NixOS/aurora.jpg"
-    }
+    };
   };
 }

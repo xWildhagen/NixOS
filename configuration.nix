@@ -84,8 +84,11 @@ in
   services.displayManager.sddm.enable = true;
 
   # KDE Plasma 6
-  services.desktopManager = {
-    plasma6.enable = true; 
+  services.desktopManager.plasma6.enable = true; 
+
+  services.plasmaWorkspace = {
+    enable = true;
+    lookAndFeelPackage = "org.kde.breezedark.desktop";
   };
 
   # Enable QEMU Guest agent

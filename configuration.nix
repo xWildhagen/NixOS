@@ -131,13 +131,5 @@ in
 
   home-manager.users.${user} = { pkgs, ... }: {
     home.stateVersion = version;
-
-    xdg.configFile."kdeglobals".text = ''
-      [General]
-      ColorScheme=BreezeDark
-
-      [KDE]
-      LookAndFeelPackage=org.kde.breezedark.desktop
-    '';
   };
 }

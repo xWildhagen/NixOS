@@ -86,9 +86,6 @@ in
   # KDE Plasma 6
   services.desktopManager = {
     plasma6.enable = true; 
-    plasma6.theme = {
-      name = "Breeze Dark";
-    };
   };
 
   # Enable QEMU Guest agent
@@ -134,5 +131,13 @@ in
 
   home-manager.users.${user} = { pkgs, ... }: {
     home.stateVersion = version;
+
+    xdg.configFile."kdeglobals".text = ''
+      [General]
+      ColorScheme=BreezeDark
+
+      [KDE]
+      LookAndFeelPackage=org.kde.breezedark.desktop
+    '';
   };
 }

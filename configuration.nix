@@ -62,6 +62,7 @@ in
   console.keyMap = "no";
 
   # Sound
+  sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -69,6 +70,7 @@ in
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    jack.enavle = true;
   };
 
   # Printing
@@ -89,6 +91,9 @@ in
     opengl.enable = true;
     nvidia.modesetting.enable = true;
   };
+
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   #-------------------------------------------------------------------------------------------
   # USER
@@ -112,6 +117,11 @@ in
   environment.systemPackages = with pkgs; [
     spice-vdagent
     waybar
+    dunst
+    libnotify
+    swww
+    kitty
+    rofi-wayland
     firefox
     vscode
     git

@@ -86,11 +86,6 @@ in
   # KDE Plasma 6
   services.desktopManager.plasma6.enable = true; 
 
-  services.plasmaWorkspace = {
-    enable = true;
-    lookAndFeelPackage = "org.kde.breezedark.desktop";
-  };
-
   # Enable QEMU Guest agent
   services.qemuGuest.enable = true;
 
@@ -134,5 +129,20 @@ in
 
   home-manager.users.${user} = { pkgs, ... }: {
     home.stateVersion = version;
+
+    # KDE dark theme via kdeglobals
+    xdg.configFile."kdeglobals".text = ''
+      [General]
+      ColorScheme=BreezeDark
+
+      [KDE]
+      LookAndFeelPackage=org.kde.breezedark.desktop
+    '';
+
+    # Plasma-specific settings via plasmarc
+    xdg.configFile."plasma-org.kde.plasma.desktop-appletsrc".text = ''
+      [Containments][1]
+      wallpaperplugin=org.kde.image
+    '';
   };
 }

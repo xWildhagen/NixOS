@@ -40,7 +40,7 @@ sudo nix-env --list-generations
 sudo nix-collect-garbage --delete-old
 ```
 
-## Unstable version of NixOS
+## Unstable version
 
 ### Unstable version of NixOS
 

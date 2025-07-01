@@ -3,8 +3,10 @@
 ### Initial setup
 
 ```
+sudo loadkeys no
 sudo rm /etc/nixos/configuration.nix
 nix-shell -p git --run "git clone https://github.com/xWildhagen/NixOS.git"
+sudo NixOS/setup.sh
 sudo ln -s ~/NixOS/configuration.nix /etc/nixos/configuration.nix
 nix-channel --add https://github.com/nix-community/home-manager/archive/release-VERSION.tar.gz home-manager
 nix-channel --update

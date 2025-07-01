@@ -5,14 +5,14 @@
 ```
 sudo loadkeys no
 nix-shell -p git --run "git clone https://github.com/xwildhagen/nixos.git"
-sudo chmod +x NixOS/setup.sh
-sudo NixOS/setup.sh
+sudo chmod +x nixos/setup.sh
+sudo nixos/setup.sh
 ```
 
 ### Pull changes from GitHub
 
 ```
-nix-shell -p git --run "git -C NixOS pull"
+nix-shell -p git --run "git -C nixos pull"
 ```
 
 ### Rebuild NixOS

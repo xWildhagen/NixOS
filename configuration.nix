@@ -10,9 +10,8 @@ let
   user    = "wildhagen";
 in
 {
-  imports =
-    [
-      /etc/nixos/hardware-configuration.nix
+  imports = [
+      ./hardware-configuration.nix
       <home-manager/nixos>
     ];
 
@@ -37,6 +36,7 @@ in
   # Networking
   networking.networkmanager.enable = true;
   #networking.wireless.enable       = true;
+  networking.firewall.enable       = true;
   networking.hostName              = "nixos";
   
   # Regional, language and time zone
@@ -107,8 +107,11 @@ in
 
   # System packages
   environment.systemPackages = with pkgs; [
+    neofetch
+    htop
     vim
     wget
+    curl
     unzip
     #spice-vdagent
     #bitwarden-desktop

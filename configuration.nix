@@ -119,6 +119,7 @@ in
     #vscode
     #terraform
     #powershell
+    #virt-viewer
     #moonlight-qt
   ];
 

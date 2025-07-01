@@ -5,7 +5,7 @@
 #-------------------------------------------------------------------------------------------
 
 let
-  version = "24.11";
+  version = "25.05";
   locale  = "nb_NO.UTF-8";
   user    = "wildhagen";
 in
@@ -100,21 +100,26 @@ in
 
   #-------------------------------------------------------------------------------------------
   # PACKAGES/PROGRAMS
+  # https://search.nixos.org/packages
   #-------------------------------------------------------------------------------------------
 
   nixpkgs.config.allowUnfree = true;
 
   # System packages
   environment.systemPackages = with pkgs; [
-    spice-vdagent
-    firefox
-    vscode
-    git
     vim
     wget
     unzip
-    terraform
-    rclone
+    #spice-vdagent
+    #bitwarden-desktop
+    #wireguard-ui
+    #protonvpn-gui
+    microsoft-edge
+    #git
+    #vscode
+    #terraform
+    #powershell
+    #moonlight-qt
   ];
 
   #-------------------------------------------------------------------------------------------

@@ -6,11 +6,8 @@
 sudo loadkeys no
 sudo rm /etc/nixos/configuration.nix
 nix-shell -p git --run "git clone https://github.com/xWildhagen/NixOS.git"
+sudo chmod +x NixOS/setup.sh
 sudo NixOS/setup.sh
-sudo ln -s ~/NixOS/configuration.nix /etc/nixos/configuration.nix
-nix-channel --add https://github.com/nix-community/home-manager/archive/release-VERSION.tar.gz home-manager
-nix-channel --update
-nixos-rebuild switch
 ```
 
 ### Pull changes from GitHub

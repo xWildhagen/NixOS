@@ -10,4 +10,5 @@ sudo rm /etc/nixos/configuration.nix
 sudo ln -s /home/nixos/NixOS/configuration.nix /etc/nixos/configuration.nix
 nix-channel --add https://github.com/nix-community/home-manager/archive/release-${VERSION}.tar.gz home-manager
 nix-channel --update
+sudo nixos-generate-config
 sudo nixos-rebuild switch

@@ -4,7 +4,6 @@
 
 ```
 sudo loadkeys no
-sudo rm /etc/nixos/configuration.nix
 nix-shell -p git --run "git clone https://github.com/xWildhagen/NixOS.git"
 sudo chmod +x NixOS/setup.sh
 sudo NixOS/setup.sh

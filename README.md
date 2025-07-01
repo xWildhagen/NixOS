@@ -6,7 +6,7 @@
 sudo loadkeys no
 nix-shell -p git --run "git clone https://github.com/xwildhagen/nixos.git"
 sudo chmod +x nixos/setup.sh
-sudo nixos/setup.sh
+sudo nixos/setup.sh VERSION
 ```
 
 ### Pull changes from GitHub

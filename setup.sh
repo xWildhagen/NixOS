@@ -12,3 +12,4 @@ nix-channel --add https://github.com/nix-community/home-manager/archive/release-
 nix-channel --update
 sudo nixos-generate-config
 sudo nixos-rebuild switch
+nixos-install

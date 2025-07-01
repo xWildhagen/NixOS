@@ -4,7 +4,7 @@
 
 ```
 sudo loadkeys no
-nix-shell -p git --run "git clone https://github.com/xwildhagen/nixos.git"
+nix-shell -p git --run "git clone https://github.com/xWildhagen/NixOS.git"
 sudo chmod +x NixOS/setup.sh
 sudo NixOS/setup.sh
 ```

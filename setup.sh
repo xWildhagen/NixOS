@@ -11,4 +11,5 @@ sudo ln -s /home/nixos/nixos/configuration.nix /etc/nixos/configuration.nix
 nix-channel --add https://github.com/nix-community/home-manager/archive/release-${VERSION}.tar.gz home-manager
 nix-channel --update
 sudo nixos-generate-config
+sudo chmod o+rx /home/nixos/nixos/configuration.nix
 sudo nixos-install --root /home/nixos/nixos/configuration.nix

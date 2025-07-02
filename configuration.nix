@@ -29,7 +29,7 @@ in
   # Bootloader
   boot.loader.grub.efiSupport            = true;
   boot.loader.grub.efiInstallAsRemovable = true;
-  boot.loader.grub.device                = "/dev/sda";
+  boot.loader.grub.device                = "nodev";
   boot.loader.efi.efiSysMountPoint       = "/boot/efi";
   #boot.loader.grub.enable      = true;
   #boot.loader.grub.device      = "/dev/sda";

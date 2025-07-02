@@ -32,7 +32,7 @@ in
   boot.loader.grub.useOSProber = true;
 
   # Enable QEMU Guest agent
-  services.qemuGuest.enable = true;
+  #services.qemuGuest.enable = true;
 
   # Networking
   networking.networkmanager.enable = true;

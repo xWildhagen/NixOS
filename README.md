@@ -12,7 +12,7 @@ sudo nixos/setup.sh VERSION
 ### Pull changes from GitHub
 
 ```
-nix-shell -p git --run "git -C nixos pull"
+nix-shell -p git --run "git -C nixos reset --hard && git -C nixos pull"
 ```
 
 ### Rebuild NixOS

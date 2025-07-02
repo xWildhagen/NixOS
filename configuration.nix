@@ -27,13 +27,8 @@ in
   system.autoUpgrade.enable = true;
 
   # Bootloader
-  boot.loader.grub.efiSupport            = true;
-  boot.loader.grub.efiInstallAsRemovable = true;
-  boot.loader.grub.device                = "nodev";
-  boot.loader.efi.efiSysMountPoint       = "/boot/efi";
-  #boot.loader.grub.enable      = true;
-  #boot.loader.grub.device      = "/dev/sda";
-  #boot.loader.grub.useOSProber = true;
+  boot.loader.systemd-boot.enable      = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   # Enable QEMU Guest agent
   #services.qemuGuest.enable = true;

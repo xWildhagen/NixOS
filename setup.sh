@@ -9,8 +9,7 @@ fi
 
 # Install
 sudo nixos-generate-config
-sudo nixos-generate-config --root /mnt
-sudo rm /mnt/etc/nixos/configuration.nix
+sudo mkdir /mnt/etc/nixos/
 sudo ln -s /home/nixos/nixos/configuration.nix /mnt/etc/nixos/configuration.nix
 nix-channel --add https://github.com/nix-community/home-manager/archive/release-${VERSION}.tar.gz home-manager
 nix-channel --update

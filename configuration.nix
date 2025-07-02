@@ -90,7 +90,7 @@ in
     isNormalUser    = true;
     description     = "Wildhagen";
     home            = "/home/wildhagen";
-    extraGroups     = [ "networkmanager" "wheel" "video" "audio" "lp" "scanner" ];
+    extraGroups     = [ "wheel" "networkmanager" "video" "audio" "lp" "scanner" ];
     initialPassword = user;
     packages = with pkgs; [
       kdePackages.kate
